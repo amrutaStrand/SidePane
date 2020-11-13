@@ -1,0 +1,54 @@
+﻿<Window x:Class="StyledTabComponent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:igDock="http://infragistics.com/DockManager"
+        xmlns:local="clr-namespace:StyledTabComponent"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="LayoutRoot">
+        <igDock:XamDockManager x:Name="PART_RibbonDockManager" Theme="Office2k7Silver"
+      FlyoutAnimation="Slide" Focusable="False">
+
+            <igDock:ContentPane>
+                <StackPanel>
+                    <TextBlock Text="Hi"/>
+                </StackPanel>
+            </igDock:ContentPane>
+
+            <igDock:XamDockManager.Panes>
+
+                <igDock:SplitPane x:Name="_splitHistoryPane" MinWidth="250">
+                    <igDock:ContentPane x:Name="HistoryPane"
+            Header="Parameters" IsPinned="False" AllowClose="False"
+            AllowDockingBottom="False" AllowDockingTop="False"
+            AllowDockingInTabGroup="False">
+                        <TabControl Margin="8" MinWidth="200" Name="TabControl1" TabStripPlacement="Top">
+                            <TabItem  >
+                                <TabItem.Header>
+                                    <Image Width="15" Source="Images/Music.jpg"/>
+                                </TabItem.Header>
+                            </TabItem>
+
+                            <TabItem >
+                                <TabItem.Header>
+                                    <Image Width="15" Source="Images/Video.png"/>
+                                </TabItem.Header>
+                            </TabItem>
+
+                            <TabItem >
+                                <TabItem.Header>
+                                    <Image Width="15" Source="Images/Books.png"/>
+                                </TabItem.Header>
+                            </TabItem>
+                        </TabControl>
+                    </igDock:ContentPane>
+                </igDock:SplitPane>
+
+
+            </igDock:XamDockManager.Panes>
+
+        </igDock:XamDockManager>
+    </Grid>
+</Window>
